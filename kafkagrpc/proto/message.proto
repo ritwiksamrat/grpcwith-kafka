@@ -1,0 +1,27 @@
+syntax="proto3";
+
+package proto;
+
+option go_package = "msgpb";
+
+message Info{
+
+        int64 id = 1;
+        string username = 2;
+        string name = 3;
+}
+
+message CreateInfoReq{
+
+    Info in=1;
+}
+
+message CreateInfoRes{
+
+    Info in=1;
+}
+
+service MessageService{
+
+    rpc CreateBlog(CreateInfoReq) returns (CreateInfoRes);
+}
